@@ -2,8 +2,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import Clients from "./components/Clients";
+import AddClientModal from "./components/AddClientModal";
 
-//for the cache data might be lost error in apollo
+// functionality for the cache data might be lost error in apollo
 const cache = new InMemoryCache({
   typePolicies: {
     Query: {
@@ -34,6 +35,7 @@ function App() {
         <Router>
           <Header />
           <div className="container">
+            <AddClientModal />
             <Clients />
           </div>
         </Router>
